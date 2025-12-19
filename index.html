@@ -14,7 +14,7 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* 落雪容器（全程顯示，覆蓋影片） */
+        /* 落雪容器 */
         #snow-container {
             position: fixed;
             top: 0; left: 0;
@@ -40,64 +40,9 @@
             }
         }
 
-        /* 前半部分：新背景圖片 */
+        /* 前半部分：內嵌 base64 背景圖片（避免 CORS 問題） */
         #front-screen {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            background: url('https://i.imgur.com/0O5fr3G.jpg') center/cover no-repeat;
-            transition: opacity 2s ease-in-out;
-            z-index: 5;
-        }
-
-        /* 後半部分：原生影片（無任何控制欄） */
-        #video-container {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            z-index: 6;
-        }
-
-        #video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* 填滿螢幕，無黑邊 */
-        }
-
-        /* 可點擊區域（整個畫面） */
-        #click-area {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            cursor: pointer;
-            z-index: 7;
-        }
-
-        /* 提示文字：透明、無背景、置中 */
-        #hint {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 1.8em;
-            font-weight: bold;
-            text-shadow: 3px 3px 6px #000;
-            text-align: center;
-            z-index: 8;
-            cursor: pointer;
-            transition: opacity 1s ease;
-            pointer-events: none;
-        }
-
-        /* 手機模式微調文字大小 */
-        @media (max-width: 768px) {
-            #hint {
-                font-size: 1.6em;
-            }
-        }
-
-        .hidden {
-            opacity
+            background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTExIWGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgY
